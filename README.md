@@ -56,15 +56,19 @@ End Game Popup
 /*-------------------------------- Constants --------------------------------*/
 
 /*-------------------------------- Variables --------------------------------*/
+```
 let snake = {x: 15, y:15};
 let control = {x: 0, y: 0};
 let food = {x: 27, y: 20}; 
 let score = 0; 
 let highScore = 0;
 const gameState = false;
+```
 
 /*------------------------ Cached Element References ------------------------*/
+```
 const startPage = document.getElementById("start-page");
 const gamePage = document.getElementById("game-page");
 const endPage = document.getElementById("game-over");
 const gameArea = document.querySelector(".game-area");
+```
