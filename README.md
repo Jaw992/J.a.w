@@ -1,10 +1,13 @@
 # Game Development - Sassy Snakey
 
 # Project Scope
-1. To re-create the classic snake game
+First project assigned while attending the Software Engineering Immersive Course at General Assembly. I was given a choice to choose a game to implement as part of my journey in developing myself in knowledge, logic, and skillsets in becoming more competent. 
+
+1. To re-create the classic snake game with the use of HTML, CSS and JavaScript
 2. Project Planning:
   - User stories
   - Wire FrameWork
+  - Code Setup
 3. Complete within given time frame 
 
 # Time Frame
@@ -12,10 +15,10 @@ Duration - 1 Week
 
 # Game Description
 Re-visiting the classic game called Snake played by millions. It was a childhood favourite of mine as it was the very first mobile game that I've played and it brings me back to the fond memories of times spent on this game with my friends and family.
-The game was designed and implemented using HTML, CSS, and Javascript while attending the Software Engineering Immersive course at General Assembly.
 
 # How to Play
 Using the directional arrow buttons from the keyboard to move the snake in the particular direction. The goal is to seek after food displayed on the board and points will be added whenever the food have been consumed by snake.
+
 Take note to avoid the edges of the board as well as colliding into your own snake body cause that's how you die!!
 
 # User Story
@@ -46,3 +49,22 @@ End Game Popup
 - Players will see their current score and high score
 - Players will play again when they click the replay button
 - Players will go back to Start page when the click the end button
+
+
+# Code Setup
+
+/*-------------------------------- Constants --------------------------------*/
+
+/*-------------------------------- Variables --------------------------------*/
+let snake = {x: 15, y:15};
+let control = {x: 0, y: 0};
+let food = {x: 27, y: 20}; 
+let score = 0; 
+let highScore = 0;
+const gameState = false;
+
+/*------------------------ Cached Element References ------------------------*/
+const startPage = document.getElementById("start-page");
+const gamePage = document.getElementById("game-page");
+const endPage = document.getElementById("game-over");
+const gameArea = document.querySelector(".game-area");

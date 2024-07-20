@@ -1,16 +1,12 @@
 /*-------------------------------- Constants --------------------------------*/
 
 /*-------------------------------- Variables --------------------------------*/
-// so think about how to represent the snake to move the snake, if 3 blocks long how will it show
-let snake = {x: 15, y:15};
+let snake = {x: 15, y:15}; // Starting Postion
 let control = {x: 0, y: 0}; // to move snake on the x and y axis of grid
-let food = {x: 27, y: 20};
-let score = 0; // Use this to display as well as add to snakes length count??
+let food = {x: 27, y: 20}; // Starting Position
+let score = 0; // Use this to display 
 let highScore = 0;
 const gameState = false; // false determine that game has not end, true means gameover
-
-// using x and y 0,0 is start top left of the screen
-// snake still moves by itself without clicking - button on screen click the snake moves
 
 /*------------------------ Cached Element References ------------------------*/
 const startPage = document.getElementById("start-page");
