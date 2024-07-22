@@ -1,6 +1,7 @@
 /*-------------------------------- Constants --------------------------------*/
 
-/*-------------------------------- Variables --------------------------------*/
+/*-------------------------------- Variables --------
+------------------------*/
 let snake = {x: 15, y:15}; // Starting Postion
 let snakeBody = [];
 let controlX = 0;
@@ -11,12 +12,15 @@ let score = 0; // Use this to display
 let highScore = localStorage.getItem("high-score") || 0;
 let gameState = false; // false determine that game has not end, true means gameover
 let renderTime;
+const gameState = false; // false determine that game has not end, true means gameover
+
 
 /*------------------------ Cached Element References ------------------------*/
 const startPage = document.getElementById("start-page");
 const gamePage = document.getElementById("game-page");
 const endPage = document.getElementById("game-over");
 const gameArea = document.querySelector(".game-area");
+
 const scoreElement = document.querySelector('.score');
 const highScoreElement = document.querySelector('.high-score');
 
