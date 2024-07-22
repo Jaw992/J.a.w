@@ -1,11 +1,13 @@
 /*-------------------------------- Constants --------------------------------*/
 
-/*-------------------------------- Variables --------------------------------*/
+/*-------------------------------- Variables --------
+------------------------*/
 let snake = {x: 15, y:15}; // Starting Postion
+let snakeBody = [];
 let control = {x: 0, y: 0}; // to move snake on the x and y axis of grid
 let food = {x: 27, y: 20}; // Starting Position
 let score = 0; // Use this to display 
-let highScore = 0;
+let highScore = [];
 const gameState = false; // false determine that game has not end, true means gameover
 
 /*------------------------ Cached Element References ------------------------*/
@@ -13,6 +15,7 @@ const startPage = document.getElementById("start-page");
 const gamePage = document.getElementById("game-page");
 const endPage = document.getElementById("game-over");
 const gameArea = document.querySelector(".game-area");
+const highScoreElement = document.querySelector(".high-score");
 /*----------------------------- Render Functions ----------------------------*/
 function renderGame() {
     gameArea.innerHTML = '';
@@ -36,7 +39,7 @@ function drawSnake () {
 
     snakeElement.style.gridArea = `${snake.y} / ${snake.x}`;
     gameArea.appendChild(snakeElement);
-    console.log(snakeElement);
+    snakeIncrease()
 }
 
 function drawFood () {
@@ -51,11 +54,30 @@ const randomFood = () => {
     food.y = Math.floor(Math.random() * 30) + 1;
 }
 
-randomFood();
+// Add snake length and plus score function
+const snakeIncrease = () => {
+    if (snake.x === food.x && snake.y === food.y) {
+        randomFood();
+        snakeBody.push(snake);
+        console.log(snakeBody);
+        increaseScore();
+    }    
+}
+
+// Add score and high score function
+const increaseScore = () => {
+    const scoreElement = document.querySelector(".score");
+    score += 1;
+    scoreElement.innerText = `Score: ${score}`;
+}
 
 // function to move snake with eventlistener
 
 // function to set the border for collision
+// if (snake.x <= 0 || snake.x > 30 || snake.y <= 0 || snake.y > 30) {
+//     gameState = true;
+//     console.log("Bang");
+// }
 
 
 
