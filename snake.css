@@ -52,7 +52,8 @@ h1 {
 }
 
 .score-board {
-  color: #B8C6DC;
+  color: #f8efef;
+  background-color: rgb(153, 153, 57);
   font-weight: 500;
   font-size: 1.2rem;
   padding: 20px 27px;
@@ -77,4 +78,6 @@ border-radius: 50%;
 
 .snake {
 background: lightpink;
+border-radius: 20%;
+border-color: black;
 }
