@@ -12,15 +12,13 @@ let score = 0; // Use this to display
 let highScore = localStorage.getItem("high-score") || 0;
 let gameState = false; // false determine that game has not end, true means gameover
 let renderTime;
-const gameState = false; // false determine that game has not end, true means gameover
-
 
 /*------------------------ Cached Element References ------------------------*/
 const startPage = document.getElementById("start-page");
 const gamePage = document.getElementById("game-page");
 const endPage = document.getElementById("game-over");
-const gameArea = document.querySelector(".game-area");
 
+const gameArea = document.querySelector(".game-area");
 const scoreElement = document.querySelector('.score');
 const highScoreElement = document.querySelector('.high-score');
 
@@ -36,9 +34,9 @@ function initGame() {
 /*-------------------------------- Functions --------------------------------*/
 // Initialise welcome page
 function init() {
-    gamePage.style.display = "block";
+    gamePage.style.display = "none";
     endPage.style.display = "none";
-    startPage.style.display = "none";
+    startPage.style.display = "block";
 }
 
 function drawSnake () {
@@ -127,7 +125,7 @@ function renderGame() {
 const startButton = document.getElementById("start-button");
 startButton.addEventListener("click", () => {
     startPage.style.display = "none";
-    endPage.style.display = "none";
+    endPage.style.display = "block";
     gamePage.style.display = "block";
 });
 

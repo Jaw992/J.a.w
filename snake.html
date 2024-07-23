@@ -18,11 +18,11 @@
         <button type="button" id="start-button">Start</button>
         <h3>Instructions:</h3>
           <p>Use the directional keys on your keyboard to play the game:<br>
-          - Up Key moves snake up<br>
-          - Down Key moves snake down<br>
-          - Left Key moves snake to the left<br>
-          - Right Key moves snake to the right<br>
-          - Avoid the borders and your own tail<br>
+          &uarr; Up Key moves snake up<br>
+          &darr; Down Key moves snake down<br>
+          &larr; Left Key moves snake to the left<br>
+          &rarr; Right Key moves snake to the right<br>
+          Avoid the borders and your own tail<br>
         </p>
         <h4>Good Luck and Have Fun!</h4>
       </fieldset>
@@ -39,8 +39,11 @@
     </section>
 
     <section id="game-over">
-      <button id="replay">Replay?</button>
-      <button id="end">End Game</button>
+      <div class="popup" id="popup">
+        <h4>Tough Luck! Play Again?</h4>
+        <button type="button" class="btn" id="replay">Replay?</button>
+        <button type="button" class="btn" id="end">End Game</button>
+      </div>
     </section>
 
   </body>
