@@ -7,9 +7,9 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* justify-content: center; */
+  overflow: hidden;
   min-height: 100vh;
-  background: #ADD9F8;
+  background: #181717;
 }
 
 h1 {
@@ -19,6 +19,7 @@ h1 {
 
 #start-page {
   font-size: x-large;
+  color: white;
 }
 
 #start-button {
@@ -42,9 +43,8 @@ h1 {
 
 .game-board {
   width: 90vmin;
-  height: 90vmin;
+  height: 85vmin;
   display: flex;
-  overflow: hidden;
   flex-direction: column;
   justify-content: center;
   background: #293447;
@@ -65,7 +65,7 @@ h1 {
 height: 100%;
 width: 100%;
 display: grid;
-background: #212837;
+background: #9cb6ef;
 grid-template-columns: repeat(30, 1fr);
 grid-template-rows: repeat(30, 1fr);
 }
@@ -73,11 +73,37 @@ grid-template-rows: repeat(30, 1fr);
 .food {
 background: #FF003D;
 border-radius: 50%;
-
+border-color: white;
+border-style: dotted;
 }
 
 .snake {
 background: lightpink;
 border-radius: 20%;
 border-color: black;
+border-style: solid;
+}
+
+.btn {
+  padding: 10px 10px;
+  background: #988f8f6e;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 300;
+  border-radius: 30px;
+}
+
+.popup {
+  width: 300px;
+  height: 150px;
+  background: #fff;
+  border-radius: 6px;
+  position: absolute;
+  top: 50%;
+  bottom: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  text-align: center;
+  align-items: center;
 }

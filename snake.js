@@ -1,7 +1,6 @@
 /*-------------------------------- Constants --------------------------------*/
 
-/*-------------------------------- Variables --------
-------------------------*/
+/*-------------------------------- Variables --------------------------------*/
 let snake = {x: 15, y:15}; // Starting Postion
 let snakeBody = [];
 let controlX = 0;
@@ -12,15 +11,14 @@ let score = 0; // Use this to display
 let highScore = localStorage.getItem("high-score") || 0;
 let gameState = false; // false determine that game has not end, true means gameover
 let renderTime;
-const gameState = false; // false determine that game has not end, true means gameover
-
 
 /*------------------------ Cached Element References ------------------------*/
 const startPage = document.getElementById("start-page");
 const gamePage = document.getElementById("game-page");
 const endPage = document.getElementById("game-over");
-const gameArea = document.querySelector(".game-area");
+const popUpElement = document.getElementById("popup");
 
+const gameArea = document.querySelector(".game-area");
 const scoreElement = document.querySelector('.score');
 const highScoreElement = document.querySelector('.high-score');
 
@@ -33,12 +31,38 @@ function initGame() {
     drawFood();
 }
 
+function renderGame() {    
+    if (gameState === true) {
+        endPage.style.display = "block";
+        clearInterval(renderTime);
+    }
+    // Adds x and y movement to snake when arrow keys are pressed 
+    snake.x += controlX;
+    snake.y += controlY;
+
+    // Check if the snake has meet with the food
+    if (snake.x === food.x && snake.y === food.y) {
+        randomFood();
+        snakeBody.push([food.x, food.y]); // Store an array value to add to snake length
+        getScores();
+    }
+
+    // Shift element value forward by one to snake body
+    for (let i = snakeBody.length - 1; i > 0; i--) {
+        snakeBody[i] = snakeBody[i - 1];
+    }
+    snakeBody[0] = [snake.x, snake.y]; // Sets first element of snake body to current position
+
+    endConditions();
+    initGame();
+}
+
 /*-------------------------------- Functions --------------------------------*/
 // Initialise welcome page
 function init() {
-    gamePage.style.display = "block";
+    gamePage.style.display = "none";
     endPage.style.display = "none";
-    startPage.style.display = "none";
+    startPage.style.display = "block";
 }
 
 function drawSnake () {
@@ -68,11 +92,11 @@ const randomFood = () => {
     food.y = Math.floor(Math.random() * 30) + 1;
 }
 
-function gameOver() {
-    clearInterval(renderTime);
-    alert("You Lose! Play Again?");
-    location.reload(); // Reload the page
-}
+// function gameOver() {
+//     clearInterval(renderTime);
+//     // alert("You Lose!!");
+//     // location.reload(); // Reload the page
+// }
 
 function getScores () {
     score += 1;
@@ -96,32 +120,6 @@ const endConditions = () => {
         }
 }
 
-
-function renderGame() {    
-    if (gameState === true) {
-        return gameOver();
-    }
-    // Adds x and y movement to snake when arrow keys are pressed 
-    snake.x += controlX;
-    snake.y += controlY;
-
-    // Check if the snake has meet with the food
-    if (snake.x === food.x && snake.y === food.y) {
-        randomFood();
-        snakeBody.push([food.x, food.y]); // Store an array value to add to snake length
-        getScores();
-    }
-
-    // Shift element value forward by one to snake body
-    for (let i = snakeBody.length - 1; i > 0; i--) {
-        snakeBody[i] = snakeBody[i - 1];
-    }
-    snakeBody[0] = [snake.x, snake.y]; // Sets first element of snake body to current position
-
-    endConditions();
-    initGame();
-}
-
 /*----------------------------- Event Listeners -----------------------------*/
 // Goes to game page from start page
 const startButton = document.getElementById("start-button");
@@ -129,6 +127,17 @@ startButton.addEventListener("click", () => {
     startPage.style.display = "none";
     endPage.style.display = "none";
     gamePage.style.display = "block";
+});
+
+const replayButton = document.getElementById("replay");
+replayButton.addEventListener("click", () => {
+    endPage.style.display = "none";
+    gamePage.style.display = "block";
+});
+
+const endButton = document.getElementById("end");
+endButton.addEventListener("click", () => {
+    location.reload();
 });
 
 // eventlistener to move by arrow key pressed to move snake
