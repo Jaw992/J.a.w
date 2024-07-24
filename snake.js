@@ -92,12 +92,6 @@ const randomFood = () => {
     food.y = Math.floor(Math.random() * 30) + 1;
 }
 
-// function gameOver() {
-//     clearInterval(renderTime);
-//     // alert("You Lose!!");
-//     // location.reload(); // Reload the page
-// }
-
 function getScores () {
     score += 1;
     highScore = Math.max(score, highScore);
