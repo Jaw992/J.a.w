@@ -36,7 +36,7 @@ Take note to avoid the edges of the board as well as colliding into your own sna
 Start Page
 - Players will see a welcome page when they enter the browser
 - Players can read the instructions in the main page
-- Click on start button to bring them to the next page
+- Click on start button to bring them to the game board
 
 Game Page
 - Players will see the board and snake in it's starting positions
@@ -46,29 +46,34 @@ Game Page
 - When the game has ended they will have an option to play again
 
 End Game Popup
-- Players will see their current score and high score
+- Players will see their current score and high score on game board
 - Players will play again when they click the replay button
-- Players will go back to Start page when the click the end button
 
 
 # Code Setup
-
 /*-------------------------------- Constants --------------------------------*/
 
 /*-------------------------------- Variables --------------------------------*/
 ```
-let snake = {x: 15, y:15};
-let control = {x: 0, y: 0};
-let food = {x: 27, y: 20}; 
-let score = 0; 
-let highScore = 0;
-const gameState = false;
-```
+let snake = {x: 15, y:15}; // Starting Postion
+let snakeBody = [];
+let controlX = 0;
+let controlY = 0;
+let food = {x: 25, y: 20}; // Starting Position
 
+let score = 0; // Use this to display 
+let highScore = localStorage.getItem("high-score") || 0;
+let gameState = false; // false determine that game has not end, true means gameover
+let renderTime;
+```
 /*------------------------ Cached Element References ------------------------*/
 ```
 const startPage = document.getElementById("start-page");
 const gamePage = document.getElementById("game-page");
 const endPage = document.getElementById("game-over");
+const popUpElement = document.getElementById("popup");
+
 const gameArea = document.querySelector(".game-area");
+const scoreElement = document.querySelector('.score');
+const highScoreElement = document.querySelector('.high-score');
 ```

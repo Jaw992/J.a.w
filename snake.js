@@ -5,7 +5,7 @@ let snake = {x: 15, y:15}; // Starting Postion
 let snakeBody = [];
 let controlX = 0;
 let controlY = 0;
-let food = {x: 27, y: 20}; // Starting Position
+let food = {x: 25, y: 20}; // Starting Position
 
 let score = 0; // Use this to display 
 let highScore = localStorage.getItem("high-score") || 0;
@@ -60,7 +60,7 @@ function renderGame() {
 /*-------------------------------- Functions --------------------------------*/
 // Initialise welcome page
 function init() {
-    gamePage.style.display = "none";
+    gamePage.style.display = "block";
     endPage.style.display = "none";
     startPage.style.display = "block";
 }
@@ -92,33 +92,37 @@ const randomFood = () => {
     food.y = Math.floor(Math.random() * 30) + 1;
 }
 
-// function gameOver() {
-//     clearInterval(renderTime);
-//     // alert("You Lose!!");
-//     // location.reload(); // Reload the page
-// }
-
 function getScores () {
     score += 1;
     highScore = Math.max(score, highScore);
     localStorage.setItem("high-score", highScore);
     scoreElement.innerText = `Score: ${score}`;
     highScoreElement.innerText = `High Score: ${highScore}`;
+    this.sound = new Audio();
+    this.sound.src = 'mixkit-quick-lock-sound-2854.wav';
+    this.sound.play();
 }
 
 const endConditions = () => {
         // Cehcking if snake goes over board
         if (snake.x <= 0 || snake.x > 30 || snake.y <= 0 || snake.y > 30) {
+            this.sound = new Audio();
+            this.sound.src = 'mixkit-arcade-fast-game-over-233.wav';
+            this.sound.play();
             gameState = true;
         }
     
         // Checking if snake hits itself
         for (let i = 1; i < snakeBody.length; i++) {
             if (snake.x === snakeBody[i][0] && snake.y === snakeBody[i][1]) {
+                this.sound = new Audio();
+                this.sound.src = 'mixkit-arcade-fast-game-over-233.wav';
+                this.sound.play();
                 gameState = true;
             }
         }
 }
+
 
 /*----------------------------- Event Listeners -----------------------------*/
 // Goes to game page from start page
@@ -129,14 +133,9 @@ startButton.addEventListener("click", () => {
     gamePage.style.display = "block";
 });
 
-const replayButton = document.getElementById("replay");
-replayButton.addEventListener("click", () => {
-    endPage.style.display = "none";
-    gamePage.style.display = "block";
-});
-
 const endButton = document.getElementById("end");
 endButton.addEventListener("click", () => {
+    clearInterval(renderTime);
     location.reload();
 });
 
@@ -157,6 +156,7 @@ document.addEventListener("keydown", (e) => {
     }
     renderGame();
 });
+
 
 init();
 renderTime = setInterval(renderGame, 100);

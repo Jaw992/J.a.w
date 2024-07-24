@@ -1,6 +1,6 @@
 * {
-  box-sizing:border-box;
-  font-family: 'Times New Roman', Times, serif;
+  box-sizing: border-box;
+  font-family: 'Games', sans-serif;                                    
 }
 
 body {
@@ -8,7 +8,7 @@ body {
   flex-direction: column;
   align-items: center;
   overflow: hidden;
-  min-height: 100vh;
+  height: 100vh;
   background: #181717;
 }
 
@@ -18,7 +18,16 @@ h1 {
 }
 
 #start-page {
+  width: 800px;
+  height: 600px;
+  position: absolute;
+  top: 35%;
+  border: 3px solid gold;
+  /* text-align: center; */
+  padding: 10px 30px;
+  align-items: center;
   font-size: x-large;
+  background-color: rgb(8, 11, 46);
   color: white;
 }
 
@@ -42,20 +51,18 @@ h1 {
 }
 
 .game-board {
-  width: 90vmin;
-  height: 85vmin;
+  width: 80vmin;
+  height: 80vmin;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   background: #293447;
-  border-radius: 5px;
 }
 
 .score-board {
   color: #f8efef;
   background-color: rgb(153, 153, 57);
   font-weight: 500;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   padding: 20px 27px;
   display: flex;
   justify-content: space-between;
@@ -84,21 +91,33 @@ border-color: black;
 border-style: solid;
 }
 
-.btn {
+h4 {
+  font-size: 40px;
+}
+
+#end {
+  height: 80px;
+  width: 200px;
   padding: 10px 10px;
-  background: #988f8f6e;
-  border: 0;
+  background: #fc0808b6;
+  border: 3px solid #fc0808fa;
   outline: none;
   cursor: pointer;
-  font-size: 15px;
-  font-weight: 300;
-  border-radius: 30px;
+  font-size: 30px;
+  font-weight: bolder;
+  border-radius: 5px;
+}
+
+#end:hover {
+  background-color: #fc0808fa;
+  color: white;
 }
 
 .popup {
   width: 300px;
-  height: 150px;
+  height: 350px;
   background: #fff;
+  border: 3px solid black;
   border-radius: 6px;
   position: absolute;
   top: 50%;
