@@ -84,6 +84,7 @@ function drawFood () {
     const foodElement = document.createElement("div");
     foodElement.classList.add("food");
     foodElement.style.gridArea = `${food.y} / ${food.x}`;
+    foodElement.innerHTML = '\u{1F969}';
     gameArea.appendChild(foodElement);
 }
 
