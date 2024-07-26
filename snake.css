@@ -130,10 +130,15 @@ h4 {
   align-items: center;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-height: 800px), screen and (max-width: 700px) {
+ 
+  h1 {
+    font-size: 50px;
+  }
+
   .gameBoard {
-      width: 60vmin;
-      height: 60vmin;
+      width: 50vmin;
+      height: 50vmin;
   }
 
   .food {
