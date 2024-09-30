@@ -15,12 +15,14 @@ Duration - 1 Week
 
 ## Game Description
 Re-visiting the classic game called Snake played by millions. It was a childhood favourite of mine as it was the very first mobile game that I've played and it brings me back to the fond memories of times spent on this game with my friends and family.
-![Snake Homepage](/SassySnake.png)
 
-## How to Play
+## Getting Started
+![Snake Homepage](/SassySnake.png)
+Play the game [here](jaw992.github.io/Project-1-Snake/).
+
 Using the directional arrow buttons from the keyboard to move the snake in the particular direction. The goal is to seek after food displayed on the board and points will be added whenever the food have been consumed by snake.
 
-Take note to avoid the edges of the board as well as colliding into your own snake body cause that's how you die!!
+Take note to avoid the edges of the board as well as colliding into your own snake body cause that's how you die!! 
 
 ## User Story
 1) New Players see a start page that welcomes players to the game
