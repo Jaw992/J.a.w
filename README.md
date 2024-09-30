@@ -1,6 +1,6 @@
 # Game Development - Sassy Snakey
 
-# Project Scope
+## Project Scope
 First project assigned while attending the Software Engineering Immersive Course at General Assembly. I was given a choice to choose a game to implement as part of my journey in developing myself in knowledge, logic, and skillsets in becoming more competent. 
 
 1. To re-create the classic snake game with the use of HTML, CSS and JavaScript
@@ -10,18 +10,19 @@ First project assigned while attending the Software Engineering Immersive Course
   - Code Setup
 3. Complete within given time frame 
 
-# Time Frame
+## Time Frame
 Duration - 1 Week 
 
-# Game Description
+## Game Description
 Re-visiting the classic game called Snake played by millions. It was a childhood favourite of mine as it was the very first mobile game that I've played and it brings me back to the fond memories of times spent on this game with my friends and family.
+![Snake Homepage](/SassySnake.png)
 
-# How to Play
+## How to Play
 Using the directional arrow buttons from the keyboard to move the snake in the particular direction. The goal is to seek after food displayed on the board and points will be added whenever the food have been consumed by snake.
 
 Take note to avoid the edges of the board as well as colliding into your own snake body cause that's how you die!!
 
-# User Story
+## User Story
 1) New Players see a start page that welcomes players to the game
 2) Instructions will be shown it the start page
 3) Players will see the board with the snake in a starting position
@@ -32,7 +33,7 @@ Take note to avoid the edges of the board as well as colliding into your own sna
 8) Players can see their high score displayed
 9) Players are able to play again when the game has ended
 
-# Wire FrameWork
+## Wire FrameWork
 Start Page
 - Players will see a welcome page when they enter the browser
 - Players can read the instructions in the main page
@@ -50,7 +51,7 @@ End Game Popup
 - Players will play again when they click the replay button
 
 
-# Code Setup
+## Code Setup
 /*-------------------------------- Constants --------------------------------*/
 
 /*-------------------------------- Variables --------------------------------*/
