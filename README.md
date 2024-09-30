@@ -52,6 +52,8 @@ End Game Popup
 - Players will see their current score and high score on game board
 - Players will play again when they click the replay button
 
+## Technologies Used
+- HTML, CSS and JavaScript
 
 ## Code Setup
 /*-------------------------------- Constants --------------------------------*/
