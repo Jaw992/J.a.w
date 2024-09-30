@@ -5,6 +5,7 @@ First project assigned while attending the Software Engineering Immersive Course
 
 1. To re-create the classic snake game with the use of HTML, CSS and JavaScript
 2. Project Planning:
+  - Game Description
   - User stories
   - Wire FrameWork
   - Code Setup
@@ -24,7 +25,7 @@ Using the directional arrow buttons from the keyboard to move the snake in the p
 
 Take note to avoid the edges of the board as well as colliding into your own snake body cause that's how you die!! 
 
-## User Story
+## User Stories
 1) New Players see a start page that welcomes players to the game
 2) Instructions will be shown it the start page
 3) Players will see the board with the snake in a starting position
