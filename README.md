@@ -18,7 +18,7 @@ Re-visiting the classic game called Snake played by millions. It was a childhood
 
 ## Getting Started
 ![Snake Homepage](/SassySnake.png)
-Play the game [here](jaw992.github.io/Project-1-Snake/).
+Play the game [here](https://jaw992.github.io/Project-1-Snake/).
 
 Using the directional arrow buttons from the keyboard to move the snake in the particular direction. The goal is to seek after food displayed on the board and points will be added whenever the food have been consumed by snake.
 
